@@ -1,7 +1,7 @@
 // Google Drive API implementation
 let accessToken = null;
 
-const API_KEY = 'AIzaSyCxvr544HyGzB8ypypJtwRZCSE9_Z09y3M';
+const API_KEY = 'drive picker api key';
 
 function initializeSearch() {
     const searchBar = document.getElementById('searchBar');
