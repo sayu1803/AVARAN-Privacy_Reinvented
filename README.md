@@ -1,10 +1,4 @@
-
-<h1 align="center">🚀 Avaran - Privacy_Reinvented 🔒</h1>
-<p align="center">
-    <b>The next-gen secure cloud client.</b><br>
-    <i>All Snowden features. All APIs. Now, on Google Drive.</i>
-</p>
-
+<h1 align="center">⚡ AVARAN - PRIVACY_REINVENTED ⚡</h1>
 <p align="center">
     <img src="https://img.shields.io/badge/Status-Active-green.svg">
     <img src="https://img.shields.io/badge/Platform-Electron-blue.svg">
@@ -13,28 +7,46 @@
 
 ---
 
-## 🔥 What is Avaran?
+# 🛡️ **THE LAST LINE OF DEFENSE FOR YOUR FILES**  
 
-Avaran is **Snowden, reborn.**  
-A secure **Google Drive client** with **end-to-end encryption, client-side key management, and API-powered automation.**  
-Everything runs locally—**your keys, your control, your privacy.**  
+They track. They monitor. They exploit. **You deserve better.**  
 
----
+🚫 **No tracking.**  
+🚫 **No backdoors.**  
+🚫 **No data leaks.**  
 
-## ⚡ Features  
+Avaran is **Snowden’s spiritual successor**—a **zero-trust** encrypted cloud client built for one purpose:  
+To **protect your data, even from the cloud itself.**  
 
-✔ **🔑 Full Encryption** – Encrypt files **before** upload using AES & Argon2.  
-✔ **🔒 Zero-Knowledge** – Your keys **never** leave your machine. Not even Google can see your data.  
-✔ **🔄 Seamless Sync** – Fully integrated with **Google Drive API**.  
-✔ **🖥️ Local Key Storage** – No passwords stored in-app. Everything is in **Windows Registry**.  
-✔ **📁 File Integrity** – Detect **unauthorized changes** instantly.  
-✔ **🔐 Secure Login** – OAuth 2.0-based authentication for privacy-first access.  
-
-> 💡 *More cloud platforms coming soon!*  
+> **🔐 All Snowden features. All APIs. Now, on Google Drive.**
 
 ---
 
-## 🚀 Installation  
+# 🔥 **WHY AVARAN?**  
+
+### ⚡ **🔑 END-TO-END ENCRYPTION**
+🔹 AES-256 **before upload.**  
+🔹 Argon2 for **password hardening.**  
+🔹 Google Drive **sees gibberish.** You **hold the keys.**  
+
+### ⚡ **🔒 ZERO-KNOWLEDGE SECURITY**
+🔹 Your **keys never leave** your system.  
+🔹 **No plaintext passwords.** Ever.  
+🔹 **Not even Google** can decrypt your files.  
+
+### ⚡ **🔄 FULL GOOGLE DRIVE INTEGRATION**
+🔹 OAuth 2.0 authentication  
+🔹 Seamless file syncing  
+🔹 **No manual uploads. No headaches.**  
+
+### ⚡ **🖥️ LOCAL KEY STORAGE**
+🔹 **No cloud key storage.**  
+🔹 Encryption keys saved in **Windows Registry.**  
+🔹 If you lose your key, **no one can recover it.** Not even us.  
+
+---
+
+# 🚀 **INSTALLATION**  
 
 ### **1️⃣ Clone the Repository**
 ```sh
