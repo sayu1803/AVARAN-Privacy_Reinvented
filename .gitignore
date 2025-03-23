@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+server.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+bower_components/
+
+# Output folders
+dist/
+build/
+uploads/
+
+# Credentials and security files
+creds.json
+encryption_keys.json
+tokens.json
+userPreferences.json
+public.pem
+avaran_certificate*
+
+# Compiled files
+*.dll
+*.so
+*.dylib
+
+# IDE specific files
+.vscode/
+.idea/
+*.iml
+
+# OS specific files
+.DS_Store
+Thumbs.db

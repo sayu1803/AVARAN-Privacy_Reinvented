@@ -1,0 +1,374 @@
+/* ----------------------------- */
+/* General Styles for the Login Page */
+/* ----------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Google Sans', Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #202124;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-card .logo img {
+    width: auto;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.login-card h1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #202124;
+}
+
+.login-btn {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.login-btn:hover {
+    background-color: #000000;
+}
+
+.login-message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #3a6f93;
+}
+
+#passwordForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#password, #confirmPassword {
+    width: 93%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #202124;
+}
+
+#password:focus, #confirmPassword:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.error-message {
+    color: #d93025;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+#notice {
+    color: #d93025;
+    font-size: small;
+}
+
+.skip-btn {
+    background-color: transparent;
+    color: #000000;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    width: auto;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skip-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Forgot Password Button */
+.forgot-password-btn {
+    background-color: transparent;
+    color: #000000;
+    padding: 8px 12px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.forgot-password-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .forgot-password-btn {
+      color: #f0f0f0;
+      border-color: #f0f0f0;
+    }
+    .forgot-password-btn:hover {
+      background-color: #f0f0f0;
+      color: #1e1e1e;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+  .login-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  }
+  .login-card h1 {
+    color: #f0f0f0;
+  }
+  #password, #confirmPassword {
+    background-color: #333;
+    color: #f0f0f0;
+    border: 1px solid #444;
+  }
+  .skip-btn, .forgot-password-btn {
+    color: #f0f0f0;
+    border-color: #f0f0f0;
+  }
+  .skip-btn:hover, .forgot-password-btn:hover {
+    background-color: #f0f0f0;
+    color: #1e1e1e;
+  }
+}
+
+/* Recovery Modal container */
+.recovery-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Recovery Modal content box */
+.recovery-modal-content {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Recovery Modal close button */
+.recovery-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f0f0f0;
+}
+
+/* Recovery Input (for recovery modal) */
+.recovery-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+/* Recovery Modal Submit Button */
+.recovery-modal-submit-btn {
+    padding: 10px 20px;
+    background-color: #007acc;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.recovery-modal-submit-btn:hover {
+    background-color: #005a9e;
+}
+
+/* Seed Phrase Container (for recovery setup modal) */
+.seed-phrase-container {
+    background-color: #333;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-family: monospace;
+    word-break: break-all;
+    color: #f0f0f0;
+}
+
+/* Copy Seed Button */
+.copy-seed-btn {
+    padding: 10px 20px;
+    background-color: #007acc;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copy-seed-btn:hover {
+    background-color: #005a9e;
+}
+
+/* Recovery Modal container (applies to all modals with the .recovery-modal class) */
+.recovery-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Recovery Modal content box (applies to all modals) */
+.recovery-modal-content {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Recovery Modal close button */
+.recovery-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f0f0f0;
+}
+
+/* For the recovered password modal, we can ensure the paragraph looks good */
+#recoveredPasswordMessage {
+    font-size: 16px;
+    margin: 20px 0;
+    word-break: break-all;
+}
+
+/* Copy Seed Button (used also for copy recovered password) */
+.copy-seed-btn {
+    padding: 10px 20px;
+    background-color: #007acc;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.copy-seed-btn:hover {
+    background-color: #005a9e;
+}
+
+/* Dark mode: (if using a media query for dark mode, these already apply) */
+@media (prefers-color-scheme: dark) {
+  .recovery-modal-content {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+}
+
+.recovery-error {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #d93025;
+}
+  

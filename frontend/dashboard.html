@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://kit.fontawesome.com/7f339140d6.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+</head>
+
+<body>
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading your files...</p>
+        <div class="loading-progress">
+          <div class="loading-progress-bar"></div>
+        </div>
+      </div>
+    <div id="alertContainer"></div>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo" id="dashboardLogo">
+                <img src="assets/Snowden.png" alt="Drive Logo" />
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li>
+                        <a href="#" class="active" id="homeLink">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'%3E%3C/path%3E%3C/svg%3E"
+                                alt="Home Icon">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="secureFilesLink">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'%3E%3C/path%3E%3C/svg%3E"
+                                alt="Secure Files Icon">
+                            Secure Files
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="statisticsLink">
+                            <i class="fas fa-chart-bar"></i> <span>Statistics</span>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="#" id="trashLink">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16'%3E%3C/path%3E%3C/svg%3E"
+                                alt="Trash Icon">
+                            Trash
+                        </a>
+                    </li> -->
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="content-header">
+                <div class="logoo" id="dashboardLogoo">
+                    <img src="assets/drive-icon.png" alt="Drive Logo" />
+                </div>
+                <div class="header-actions">
+                    <input type="text" placeholder="Search in Drive" id="searchBar" aria-label="Search in Drive" />
+                    <div class="profile-dropdown-container">
+                        <button id="profileToggle" class="profile-toggle">
+                            <img id="profileIconImage" src="assets/default-profile-icon.png" alt="Profile"
+                                class="profile-icon-image">
+                        </button>
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <div class="profile-info">
+                                <img id="profilePicture" src="assets/default-profile-icon.png" alt="Profile Picture"
+                                    class="profile-picture">
+                                <h3 id="profileName">John Doe</h3>
+                                <p id="profileEmail">johndoe@example.com</p>
+                            </div>
+                            <div class="profile-options">
+                                <button id="darkModeToggle" class="profile-option">
+                                    <i class="fas fa-moon"></i>
+                                    Dark Mode
+                                </button>
+                                <button id="settingsButton" class="profile-option">
+                                    <i class="fas fa-cog"></i>
+                                    Settings
+                                </button>
+                                <button id="signOutButton" class="profile-option sign-out">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Sign Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="main-content">
+                <section id="dashboardCards" class="dashboard-cards">
+                    <div class="card total-storage">
+                        <div class="card-header">
+                            <h3>Total Storage</h3>
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <p class="card-value" id="totalStorageValue"></p>
+                        <p class="card-subtext" id="totalStorageSubtext"></p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="card files">
+                        <div class="card-header">
+                            <h3>Confidential Files</h3>
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <p class="card-value" id="encryptedFilesCount">0</p>
+                        <p class="card-subtext">Encrypted Files</p>
+                    </div>
+                    <!-- <div class="card shared-files">
+                        <div class="card-header">
+                            <h3>Shared Files</h3>
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p class="card-value">0</p>
+                        <p class="card-subtext">Files you've shared</p>
+                    </div> -->
+                    <div class="card security-score">
+                        <div class="card-header">
+                            <h3>Security Score</h3>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <p class="card-value">0%</p>
+                        <p class="card-subtext">Your files are not encrypted.</p>
+                    </div>
+                      
+                </section>
+
+                <section id="fileSection" class="file-section">
+                    <h3>Your Google Drive Files</h3>
+                    <div id="breadcrumb" class="breadcrumb"></div>
+
+                    <div class="file-filters">
+                        <button class="filter-btn filter-option active">All</button>
+                        <button class="filter-btn filter-option">Files</button>
+                        <button class="filter-btn filter-option">Folders</button>
+                        <button id="toggleViewButton" class="toggle-view-btn">
+                            <img src="assets/file-icons/grid-icon.png" alt="Toggle View" id="toggleViewIcon" height="20"
+                                width="20" />
+                        </button>
+                    </div>
+                    <div id="fileList" class="file-list">
+                        <!-- Files will be dynamically added here -->
+                    </div>
+                    <div id="loadingStatus"></div>
+                </section>
+                <!-- Statistics Section (initially hidden) -->
+                <section id="statisticsSection" class="statistics-section" style="display: none;">
+                    <h3>Drive Statistics</h3>
+                    
+                    <!-- First Row: 5 cards -->
+                    <div class="stats-grid first-row">
+                    <!-- Security Score Card -->
+                    <div class="stat-card" id="securityStat">
+                        <h4>Security Score</h4>
+                        <p class="stat-value" id="securityScoreValue">0%</p>
+                        <p class="stat-description" id="securityScoreDesc">Your drive security is low.</p>
+                        <p class="stat-label">Total Files: <span id="totalFilesValue">0</span></p>
+                        <p class="stat-label">Encrypted Files: <span id="encryptedFilesValue">0</span></p>
+                    </div>
+                    <!-- Storage Usage Card -->
+                    <div class="stat-card" id="storageUsageStat">
+                        <h4>Storage Usage</h4>
+                        <p class="stat-value" id="storageUsedValue">0 GB</p>
+                        <p class="stat-description" id="storageStatsDesc">0% of quota</p>
+                        <canvas id="storageChartSmall" width="150" height="150"></canvas>
+                    </div>
+                    <!-- File Type Breakdown Card -->
+                    <div class="stat-card" id="fileTypeStat">
+                        <h4>File Types</h4>
+                        <canvas id="fileTypeChartSmall" width="150" height="150"></canvas>
+                    </div>
+                    <!-- Shared Files Card -->
+                    <div class="stat-card" id="sharedFilesStat">
+                        <h4>Shared Files</h4>
+                        <p class="stat-value" id="sharedFilesValue">0</p>
+                        <p class="stat-description" id="sharedFilesDesc">Files you have shared</p>
+                    </div>
+                    <!-- Unique Collaborators Card -->
+                    <div class="stat-card" id="collaboratorsStat">
+                        <h4>Unique Collaborators</h4>
+                        <p class="stat-value" id="collaboratorsValue">0</p>
+                        <p class="stat-description" id="collaboratorsDesc">Unique people shared with</p>
+                    </div>
+                    </div>
+                
+                    <!-- Second Row: Two columns layout -->
+                    <div class="stats-grid second-row">
+                    <!-- Left Column: Vertical Stack of Top Collaborators and Storage Trend -->  
+                    <div class="left-column">
+                        <!-- Top Collaborators Card (Standard Size) -->
+                        <div class="stat-card" id="topCollaboratorsStat">
+                        <h4>Top Collaborators</h4>
+                        <div id="topCollaborators">Loading...</div>
+                        </div>
+                        <!-- Storage Trend Card (Spans 2 columns width in left column) -->  
+                        <div class="stat-card" id="storageTrendStat">
+                        <h4>Storage Trend (30 days)</h4>
+                        <canvas id="storageTrendChart" width="600" height="200"></canvas>
+                        </div>
+                    </div>
+                    <!-- Right Column: Recent Files Card (Spans entire height of second row) -->  
+                    <div class="right-column">
+                        <div class="stat-card" id="recentFilesStat">
+                        <h4>Recent Files</h4>
+                        <table class="recent-files-table">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Date Modified</th>
+                                <th>Size</th>
+                            </tr>
+                            </thead>
+                            <tbody id="recentFiles"></tbody>
+                        </table>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+    
+            </div>
+            <button id="uploadButton" class="upload-btn" aria-label="Upload">
+                <i class="fas fa-plus"></i>
+            </button>
+            <div id="uploadDropup" class="upload-dropup">
+                <button id="uploadToggle" class="upload-toggle" aria-label="Upload">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div id="uploadMenu" class="upload-menu">
+                    <button id="uploadFileBtn" class="upload-option">
+                        <i class="fas fa-file"></i>
+                        Upload File
+                    </button>
+                    <button id="uploadEncryptedFileBtn" class="upload-option">
+                        <i class="fas fa-lock"></i>
+                        Upload Encrypted File
+                    </button>
+                    <button id="uploadFolderBtn" class="upload-option">
+                        <i class="fas fa-folder"></i>
+                        Upload Folder
+                    </button>
+                </div>
+            </div>
+            <div id="uploadProgressContainer" class="upload-progress-container">
+                <div id="uploadProgressBar" class="upload-progress-bar"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Delete Modal -->
+    <div id="deleteModal" class="delete-modal">
+        <div class="delete-modal-content">
+            <div class="delete-modal-header">
+                <div class="delete-modal-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h2>Delete File</h2>
+            </div>
+            <p>Are you sure you want to delete this file? This action cannot be undone.</p>
+            <div class="delete-modal-buttons">
+                <button id="cancelDelete" class="delete-modal-button delete-modal-button-cancel">Cancel</button>
+                <button id="confirmDelete" class="delete-modal-button delete-modal-button-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- Share Modal -->
+    <div id="shareModal" class="share-modal" style="display: none;">
+        <div class="share-modal-content">
+        <span id="closeShareModal" class="share-close">&times;</span>
+        <h2>Share File</h2>
+        <!-- Message container for status messages -->
+        <div id="shareMessage" class="share-message" style="display:none;"></div>
+        <form id="shareForm">
+            <!-- Hidden field for file ID -->
+            <input type="hidden" id="shareFileId">
+            
+            <!-- Sharing mode selection -->
+            <div class="share-mode">
+            <input type="radio" name="shareType" id="shareTypeUser" value="user" checked>
+            <label for="shareTypeUser">Specific User</label>
+            <input type="radio" name="shareType" id="shareTypeAnyone" value="anyone">
+            <label for="shareTypeAnyone">Anyone with the link</label>
+            </div>
+            
+            <!-- Email input (only used for specific user sharing) -->
+            <div id="emailField">
+            <label for="shareEmail">Email Address:</label>
+            <input type="email" id="shareEmail" placeholder="user@example.com">
+            </div>
+            
+            <!-- Permission selection with commenter option -->
+            <label for="shareRole">Permission:</label>
+            <select id="shareRole">
+            <option value="reader">Viewer</option>
+            <option value="commenter">Commenter</option>
+            <option value="writer">Editor</option>
+            </select>
+            
+            <button type="submit">Share</button>
+        </form>
+        </div>
+    </div>
+    <!-- Preview Modal -->
+    <div id="previewModal" class="preview-modal" style="display: none;">
+        <div class="preview-modal-content" id=""previewContent>
+            <!-- The preview (image or iframe) or spinner will be injected here -->
+        </div>
+        <span id="previewClose" class="preview-close">&times;</span>
+    </div>
+
+    <div id="settingsModal" class="settings-modal">
+        <div class="settings-container">
+            <!-- Sidebar -->
+            <div class="settings-sidebar">
+                <div class="settings-header">
+                    <h2>Settings</h2>
+                    <button class="close-button">&times;</button>
+                </div>
+                <nav class="settings-nav">
+                    <a href="#" class="nav-item active" data-section="general">
+                        <i class="fas fa-cog"></i>
+                        General
+                    </a>
+                    <a href="#" class="nav-item" data-section="encryption">
+                        <i class="fas fa-lock"></i>
+                        Encryption
+                    </a>
+                    <!-- <a href="#" class="nav-item" data-section="display">
+                        <i class="fas fa-desktop"></i>
+                        Display
+                    </a> -->
+                    <a href="#" class="nav-item" data-section="premium">
+                        <i class="fas fa-crown"></i>
+                        Premium
+                    </a>
+                    <a href="#" class="nav-item" data-section="set-password">
+                        <i class="fas fa-shield-alt"></i>
+                        Password
+                    </a>
+                    <a href="#" class="nav-item" data-section="privacy">
+                        <i class="fas fa-shield-alt"></i>
+                        Privacy
+                    </a>
+                    
+                    <a href="#" class="nav-item" data-section="contact">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </a>
+                </nav>
+            </div>
+            <!-- Content Area -->
+            <div class="settings-content">
+                <!-- General Section -->
+                <div class="settings-section active" id="general">
+                    <h3>General Settings</h3>
+                    <div class="setting-item">
+                        <span>Theme</span>
+                        <select class="theme-select">
+                            <option value="system">System</option>
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Encryption Section -->
+                <div class="settings-section" id="encryption">
+                    <h3>Encryption Settings</h3>
+                    <div class="setting-item">
+                        <span>Encryption Algorithm</span>
+                        <select id="encryptionAlgorithm">
+                            <option value="fast">FAST (Less Secure)</option>
+                            <option value="balanced">Balanced</option>
+                            <option value="secure">Secure (Slower)</option>
+                        </select>
+                    </div>
+                    <p id="encryptionDescription"></p>
+                </div>
+                <!-- Display Section -->
+                <div class="settings-section" id="display">
+                    <h3>Display Settings</h3>
+                    <div class="setting-item">
+                        <span>Files Display Count</span>
+                        <input type="number" id="filesDisplayCount" min="10" max="100" value="20">
+                    </div>
+                </div>
+                <div class="settings-section" id="premium">
+                    <!-- <h3>Premium Features</h3> -->
+                    <!-- <i class="fas fa-crown"></i> -->
+                    <h3>Upgrade to Premium</h3>
+                    <div class="setting-item"> 
+                        <div>
+                            <p>Get access to advanced features and unlimited storage</p>
+                            <button id="upgradeToPremium" class="premium-button">Upgrade Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Privacy Policy Section -->
+                <div class="settings-section" id="privacy">
+                    <h3>Privacy Policy</h3>
+                    <p class="privacy-note">
+                    <strong>Note:</strong> We highly recommend you read at least the short version of our Privacy Policy so you understand your rights and responsibilities when using Avaran. 
+                    </p>
+                    <div class="privacy-toggle">
+                    <button id="shortPolicyBtn" class="privacy-btn active">Short Version</button>
+                    <button id="fullPolicyBtn" class="privacy-btn">Full Version</button>
+                    </div>
+                    <div id="privacyPolicyContainer" class="privacy-policy-text">
+                    <!-- Default content: Short version -->
+                    <p><strong>Short Version:</strong> Avaran is a secure client‑side encryption tool that processes all file operations locally. Only encrypted files are transmitted to your cloud drive provider, and we do not collect or store your personal data on our servers. For full details, view the Full Privacy Policy.</p>
+                    </div>
+                </div>
+
+                <!-- Password Section -->
+                <div class="settings-section" id="set-password">
+                    <h3>Password</h3>
+                    <h4>Set Password</h4>
+                    <input type="password" id="currentPassword" placeholder="Current Password">
+                    <input type="password" id="newPassword" placeholder="New Password">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                    <button id="changePasswordBtn">Change Password</button>
+                    <p id="passwordMessage"></p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="settings-section" id="contact">
+                    <h3>Contact Us</h3>
+                    <div class="contact-content">
+                      <p>If you have any questions or need assistance, please contact us at:</p>
+                      <div class="contact-email">
+                        <a href="mailto:team26capstonevit@gmail.com" id="contactEmailLink">team26capstonevit@gmail.com</a>
+                        <button id="copyEmailBtn">Copy Email</button>
+                      </div>
+                      <p class="contact-note">We strive to respond within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://kit.fontawesome.com/7f339140d6.js" crossorigin="anonymous"></script> -->
+    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/drive-picker.js"></script>
+</body>
+
+</html>

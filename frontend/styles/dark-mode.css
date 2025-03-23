@@ -1,0 +1,760 @@
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #202124;
+    color: #e8eaed;
+}
+
+.dark-mode .sidebar {
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c, #1a1a1a);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .content {
+    background-color: #202124;
+}
+
+.dark-mode .content-header {
+    background-color: #292a2d;
+    border-bottom: 1px solid #3c4043;
+}
+
+.dark-mode .content-header h2 {
+    color: #e8eaed;
+}
+
+.dark-mode #searchBar {
+    background-color: #3c4043;
+    color: #e8eaed;
+    border-color: #5f6368;
+    transition: box-shadow 0.3s ease;
+}
+
+.dark-mode #searchBar:focus {
+    box-shadow: 0 1px 6px rgba(112, 112, 112, 0.28);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.dark-mode .card {
+    background-color: #292a2d;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3),
+      0 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .card-header h3,
+.dark-mode .card-value,
+.dark-mode .card-subtext {
+    color: #e8eaed;
+}
+
+.dark-mode .file-section {
+    background-color: #292a2d;
+}
+
+.dark-mode .file-item {
+    background-color: #292a2d;
+    border-bottom: 1px solid #3c4043;
+}
+
+.dark-mode .file-item:hover {
+    background-color: #3c4043;
+}
+
+.dark-mode .file-link {
+    color: #8ab4f8;
+}
+
+.dark-mode .file-details {
+    color: #9aa0a6;
+}
+
+.dark-mode .file-action-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e8eaed;
+}
+
+/* Share button hover effect */
+.dark-mode .file-action-button.share-btn:hover {
+    color: #4285f4; /* Google Blue */
+    box-shadow: 0 0 10px rgba(66, 133, 244, 0.5);
+}
+
+/* Download button hover effect */
+.dark-mode .file-action-button.download-btn:hover {
+    color: #91d994; /* Google Green */
+    box-shadow: 0 0 10px rgba(15, 157, 88, 0.5);
+}
+
+.dark-mode .file-action-button.delete-btn:hover {
+    color: #db4437; /* Google Red */
+    box-shadow: 0 0 10px rgba(219, 68, 55, 0.5);
+}
+
+
+.dark-mode .file-action-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .profile-dropdown {
+    background-color: #292a2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .profile-option {
+    color: #e8eaed;
+    border-color: #3c4043;
+}
+
+.dark-mode .profile-option:hover {
+    background-color: #3c4043;
+}
+
+.dark-mode .upload-menu {
+    background: linear-gradient(135deg, #292a2d, #3c4043);
+}
+
+.dark-mode .upload-option {
+    color: #e8eaed;
+}
+
+.dark-mode .upload-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .filter-btn {
+    background-color: #3c4043;
+    color: #e8eaed;
+}
+
+.dark-mode .filter-btn:hover {
+    background-color: #4d5256;
+}
+
+.dark-mode .filter-btn.active {
+    background-color: #8ab4f8;
+    color: #202124;
+}
+
+.dark-mode .toggle-view-btn {
+    background-color: #3c4043;
+    color: #e8eaed;
+}
+
+.dark-mode .toggle-view-btn:hover {
+    background-color: #4d5256;
+}
+
+.dark-mode .upload-btn {
+    background-color: #8ab4f8;
+    color: #202124;
+}
+
+.dark-mode .upload-btn:hover {
+    background-color: #669df6;
+}
+
+.dark-mode .delete-modal-content {
+    background-color: #292a2d;
+    color: #e8eaed;
+}
+
+.dark-mode .delete-modal-button-cancel {
+    background-color: #3c4043;
+    color: #e8eaed;
+}
+
+.dark-mode .delete-modal-button-cancel:hover {
+    background-color: #4d5256;
+}
+
+.dark-mode .delete-modal-button-delete {
+    background-color: #c53030;
+    color: #e8eaed;
+}
+
+.dark-mode .delete-modal-button-delete:hover {
+    background-color: #9b2c2c;
+}
+
+.dark-mode .alert {
+    background-color: #4CAF50;
+    color: #e8eaed;
+}
+
+.dark-mode .alert-close {
+    color: #e8eaed;
+}
+
+.dark-mode .upload-progress-bar {
+    background: linear-gradient(to right, #8ab4f8, #669df6, #4285f4);
+}
+
+.dark-mode .dashboard-cards {
+    background-color: #202124;
+}
+
+.dark-mode .card {
+    background-color: #292a2d;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3),
+      0 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .card-header h3,
+.dark-mode .card-value,
+.dark-mode .card-subtext {
+    color: #e8eaed;
+}
+
+.dark-mode .total-storage {
+    background: linear-gradient(135deg, #1a3a5f, #0f2b3d);
+}
+
+.dark-mode .files {
+    background: linear-gradient(135deg, #0d4d3d, #1c6751);
+}
+
+.dark-mode .shared-files {
+    background: linear-gradient(135deg, #1a2f33, #3a5f5e);
+  
+}
+
+.dark-mode .total-storage .card-header h3,
+.dark-mode .total-storage .card-header i,
+.dark-mode .total-storage .card-value,
+.dark-mode .total-storage .card-subtext,
+.dark-mode .files .card-header h3,
+.dark-mode .files .card-header i,
+.dark-mode .files .card-value,
+.dark-mode .files .card-subtext,
+.dark-mode .shared-files .card-header h3,
+.dark-mode .shared-files .card-header i,
+.dark-mode .shared-files .card-value,
+.dark-mode .shared-files .card-subtext {
+    color: #ffffff;
+}
+
+.dark-mode .file-section h3 {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Scroll-bar */
+
+.dark-mode ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: #202124;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background-color: #4d5256;
+    border-radius: 6px;
+    border: 3px solid #202124;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background-color: #5f6368;
+}
+
+/* For Firefox */
+.dark-mode * {
+    scrollbar-width: thin;
+    scrollbar-color: #4d5256 #202124;
+}
+
+.dark-mode .profile-info h3{
+    color: #c3bdbd;
+}
+
+.dark-mode .delete-modal h2 {
+    color: #e1d8d8;
+}
+
+/* Dark mode styles for settings modal */
+body.dark-mode .settings-modal {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .settings-container {
+    background-color: #202124;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Styles */
+body.dark-mode .settings-sidebar {
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c, #1a1a1a);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .settings-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .settings-header h2 {
+    color: #8ab4f8;
+    text-shadow: 0 0 15px rgba(138, 180, 248, 0.8);
+}
+
+body.dark-mode .close-button {
+    color: #e8eaed;
+}
+
+body.dark-mode .close-button:hover {
+    color: #8ab4f8;
+}
+
+body.dark-mode .nav-item {
+    color: #e8eaed;
+}
+
+body.dark-mode .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #8ab4f8;
+}
+
+body.dark-mode .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+/* Shining hover effect */
+body.dark-mode .nav-item::before {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(138, 180, 248, 0.2),
+      transparent
+    );
+}
+
+/* Content Area Styles */
+body.dark-mode .settings-content {
+    color: #e8eaed;
+    background-color: #202124;
+}
+
+body.dark-mode .settings-section h3 {
+    color: #e8eaed;
+}
+
+body.dark-mode .setting-item {
+    border-bottom: 1px solid #3c4043;
+}
+
+/* Form Elements */
+body.dark-mode select, 
+body.dark-mode input[type="number"] {
+    background-color: #3c4043;
+    border: 1px solid #5f6368;
+    color: #e8eaed;
+}
+
+body.dark-mode select:focus, 
+body.dark-mode input:focus {
+    border-color: #8ab4f8;
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.2);
+}
+
+/* Premium Card */
+body.dark-mode .premium-card {
+    background: linear-gradient(135deg, #1a3a5f, #0f2b3d);
+}
+
+body.dark-mode .premium-button {
+    background-color: #3c4043;
+    color: #8ab4f8;
+}
+
+body.dark-mode .premium-button:hover {
+    background-color: #4d5256;
+}
+
+/* Text Button */
+body.dark-mode .text-button {
+    color: #8ab4f8;
+}
+
+body.dark-mode .text-button:hover {
+    color: #669df6;
+}
+
+/* Scrollbar */
+body.dark-mode .settings-content::-webkit-scrollbar-track {
+    background: #202124;
+}
+
+body.dark-mode .settings-content::-webkit-scrollbar-thumb {
+    background: #3c4043;
+}
+
+body.dark-mode .settings-content::-webkit-scrollbar-thumb:hover {
+    background: #4d5256;
+}
+
+/* For Firefox */
+body.dark-mode .settings-content {
+    scrollbar-color: #3c4043 #202124;
+}
+
+body.dark-mode .settings-section#set-password {
+    background-color: #202124;
+}
+
+body.dark-mode .settings-section#set-password h3 {
+    color: #e8eaed;
+}
+
+body.dark-mode .settings-section#set-password input[type="password"] {
+    background-color: #3c4043;
+    border-color: #5f6368;
+    color: #e8eaed;
+}
+
+body.dark-mode .settings-section#set-password input[type="password"]:focus {
+    border-color: #8ab4f8;
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.2);
+}
+
+body.dark-mode .settings-section#set-password button#changePasswordBtn {
+    background-color: #8ab4f8;
+    color: #202124;
+}
+
+body.dark-mode .settings-section#set-password button#changePasswordBtn:hover {
+    background-color: #669df6;
+}
+
+body.dark-mode .settings-section#set-password #passwordMessage {
+    color: #e8eaed;
+}
+
+/* Success and Error message styles */
+.settings-section#set-password #passwordMessage.success {
+    color: #0f9d58;
+}
+
+.settings-section#set-password #passwordMessage.error {
+    color: #d93025;
+}
+
+body.dark-mode .settings-section#set-password #passwordMessage.success {
+    color: #81c995;
+}
+
+body.dark-mode .settings-section#set-password #passwordMessage.error {
+    color: #f28b82;
+}
+
+/* Loading Overlay */
+
+/* Dark mode styles */
+body.dark-mode .loading-overlay {
+    background-color: rgba(32, 33, 36, 0.9);
+  }
+  
+  body.dark-mode .loading-spinner {
+    border-color: #3c4043;
+    border-top-color: #8ab4f8;
+  }
+  
+  body.dark-mode .loading-text {
+    color: #e8eaed;
+  }
+  
+  body.dark-mode .loading-progress {
+    background-color: #3c4043;
+  }
+  
+  body.dark-mode .loading-progress-bar {
+    background-color: #8ab4f8;
+  }
+
+/* Back button styles */
+
+body.dark-mode .breadcrumb-back {
+    background-color: #444;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .breadcrumb-back:hover {
+    background-color: #555;
+}
+
+body.dark-mode .preview-modal-content {
+    background-color: #333;
+}
+
+body.dark-mode .preview-close {
+    background-color: #444;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+  
+body.dark-mode .preview-close:hover {
+    background-color: #555;
+}
+
+#previewFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Dark Mode Styles for the Share Modal */
+.dark-mode .share-modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+.dark-mode .share-modal-content {
+    background: #2c2c2c;
+    border: 1px solid #555;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    width: 360px;
+    padding: 20px 25px;
+    color: #ddd;
+    font-family: sans-serif;
+    position: relative;
+}
+ 
+.dark-mode .share-modal-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+.dark-mode .share-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #bbb;
+    cursor: pointer;
+}
+  
+.dark-mode .share-close:hover {
+    color: #fff;
+}
+  
+/* Radio button container for proper alignment */
+.dark-mode .share-mode {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+  
+.dark-mode .share-mode input[type="radio"] {
+    transform: scale(1.1);
+    margin-right: 3px;
+}
+  
+.dark-mode .share-mode label {
+    color: #ccc;
+    font-size: 14px;
+    margin: 0;
+}
+  
+/* Email field adjustments */
+.dark-mode #emailField {
+    margin-bottom: 15px;
+}
+  
+.dark-mode #emailField label {
+    color: #ccc;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.dark-mode #emailField input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    background-color: #444;
+    color: #eee;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+  
+/* Select dropdown for permission */
+.dark-mode select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: #eee;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+  
+/* Submit button styling */
+.dark-mode button[type="submit"] {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+}
+  
+.dark-mode button[type="submit"]:hover {
+    background-color: #1558b0;
+}
+
+/* Dark Mode: Message Styles */
+.dark-mode .share-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+.dark-mode .share-message.success {
+    background-color: #2e7d32;
+    color: #e8f5e9;
+    border: 1px solid #2e7d32;
+}
+.dark-mode .share-message.error {
+    background-color: #c62828;
+    color: #ffebee;
+    border: 1px solid #c62828;
+}
+  
+  /* (Optional) Ensure inputs use box-sizing to prevent overflowing */
+input, select {
+    box-sizing: border-box;
+}
+
+/* Statistics Section */
+.dark-mode .statistics-section {
+    background-color: #2c2c2c;
+    color: #eee;
+    padding: 20px;
+}
+.dark-mode .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.dark-mode .stat-card {
+    background: #3a3a3a;
+    border: 1px solid #444;
+    color: #eee;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.dark-mode .stat-card h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ccc;
+}
+.dark-mode .stat-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #fff;
+}
+.dark-mode .stat-description,
+.dark-mode .stat-label {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+body.dark-mode .theme-select {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+    width: auto;
+    min-width: 120px;
+    padding: 4px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+body.dark-mode select, input[type="number"] {
+    background-color: #444;
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    width: 200px;
+    font-size: 14px;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+body.dark-mode .privacy-policy-text {
+    background-color: #222;
+    border-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .privacy-note {
+    background-color: #333;
+    color: #ddd;
+    border-left-color: #888;
+}
+
+
+body.dark-mode .privacy-btn {
+    background-color: #444;
+    border-color: #666;
+    color: #fff;
+}
+  
+body.dark-mode .privacy-btn.active {
+    background-color: #4CAF50;
+    color: #fff;
+}
+  
+body.dark-mode .privacy-toggle button {
+    background-color: #444;
+    border-color: #666;
+    color: #fff;
+}
+  
+body.dark-mode .privacy-toggle button:hover {
+    background-color: #555;
+}
+
+body.dark-mode #contact .contact-content {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+  
+body.dark-mode #contact a#contactEmailLink {
+    color: #4ea1f3;
+}
+ 
+body.dark-mode #contact button#copyEmailBtn {
+    background-color: #0056b3;
+    border-color: #004494;
+}
