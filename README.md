@@ -131,5 +131,5 @@ npm start
 ---
 
 <h3 align="center">🚀 Avaran - Because Privacy is a Right, Not a Privilege. 🔒</h3>
-```
+
 
