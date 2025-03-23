@@ -68,59 +68,65 @@ npm start
 
 ---
 
-## 📜 Tech Stack  
+# 🏗️ **TECH STACK**  
 
-- **Frontend:** Electron, HTML/CSS, JavaScript  
-- **Backend:** Node.js, Express  
-- **Security:** AES-256, Argon2, Crypto.js  
-- **Storage:** Google Drive API, Windows Registry  
-- **Auth:** OAuth 2.0  
-
----
-
-## 🔐 Security Model  
-
-Avaran follows a **zero-trust** security model:  
-
-🚫 No plaintext passwords.  
-🚫 No unencrypted storage.  
-🚫 No cloud-based key storage.  
-
-✔ **AES-256** + **PBKDF2** key derivation.  
-✔ **Keys stored in the system registry** instead of the app.  
-✔ **OAuth 2.0 authentication** to prevent credential leaks.  
-
-**Your files. Your rules.**  
+🔹 **Frontend:** Electron, HTML/CSS, JavaScript  
+🔹 **Backend:** Node.js, Express  
+🔹 **Security:** AES-256, Argon2, Crypto.js  
+🔹 **Storage:** Google Drive API, Windows Registry  
+🔹 **Auth:** OAuth 2.0  
 
 ---
 
-## 🔥 Roadmap  
+# 🔐 **SECURITY MODEL - TRUST NO ONE**  
+
+🚫 **No plaintext passwords.**  
+🚫 **No unencrypted storage.**  
+🚫 **No cloud-based key storage.**  
+
+✔ **AES-256 + PBKDF2 key derivation.**  
+✔ **Keys stored in the system registry.**  
+✔ **OAuth 2.0 authentication for maximum security.**  
+
+🔹 **Your files. Your rules.**  
+🔹 **Once encrypted, even WE can't help you decrypt them.**  
+
+---
+
+# 🛠️ **ROADMAP**  
 
 ✅ **Phase 1: Google Drive API & Full Encryption** (Completed)  
 🛠 **Phase 2: OneDrive & Dropbox Integration** (In Progress)  
 🚀 **Phase 3: Mobile App (Android & iOS)** (Coming Soon)  
 
-> 💡 **Premium security features will be added soon!**  
+> **💡 Premium security features will be added soon!**  
 
 ---
 
-## 🤝 Contribute  
+# 🛡️ **CONTRIBUTE TO THE MOVEMENT**  
 
 🔹 Found a bug? **Open an issue.**  
 🔹 Want to contribute? **Fork & submit a PR!**  
 
+> **Avaran isn’t just software. It’s a statement.**  
+
 ---
 
-## 📜 License  
+# 📜 **LICENSE**  
 
 📝 **MIT License** – Because privacy should be **open-source** and **accessible to all.**  
 
 ---
 
-## 🌍 Connect  
+# 🌍 **CONNECT**  
 
 🔗 **GitHub:** [@sayu1803](https://github.com/sayu1803)  
 📬 **Email:** team26VIT@capstone2025  
+
+---
+
+<h3 align="center">⚡ AVARAN - BECAUSE PRIVACY ISN'T A LUXURY. IT'S A RIGHT. 🔒</h3>
+
 
 ---
 
