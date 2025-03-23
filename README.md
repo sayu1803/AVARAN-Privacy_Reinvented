@@ -1,4 +1,4 @@
-```md
+
 <h1 align="center">🚀 Avaran - Privacy_Reinvented 🔒</h1>
 <p align="center">
     <b>The next-gen secure cloud client.</b><br>
